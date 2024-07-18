@@ -1,5 +1,6 @@
 package hexlet.code;
 
+import java.util.List;
 import java.util.Map;
 
 public class Differ {
@@ -14,7 +15,9 @@ public class Differ {
         Map<String, Object> files1 = Parser.parse(file1, fileFormat1);
         Map<String, Object> files2 = Parser.parse(file2, fileFormat2);
 
-        return " ";
+        List<Map<String, Object>> result = Comparator.compare(files1, files2);
+
+        return Formater.format(result);
     }
 
     public static String readFile(String filePath){
@@ -26,5 +29,12 @@ public class Differ {
         // возвращает расширение файла (json, yml, yaml)
         // сплитим по точке
         return "";
+    }
+
+    private static String format(List<Map<String, Object>> result, String format) {
+         return switch (format) {
+            case "stylish" -> Formater.format(result);
+             default -> throw new RuntimeException("format not supported");
+        };
     }
 }
