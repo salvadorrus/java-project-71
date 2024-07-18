@@ -23,5 +23,5 @@ jobs:
         with:
           hexlet-id: ${{ secrets.HEXLET_ID }}
           gradle-version: 8.7
-            - run: make checkstyleMain
-            - run: make test
+      - run: make checkstyleMain
+      - run: make test
