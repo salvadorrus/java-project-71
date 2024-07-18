@@ -20,7 +20,7 @@ public class Differ {
         return Formater.format(result);
     }
 
-    public static String readFile(String filePath){
+    public static String readFile(String filePath) {
         // Читаем содержимое файла
         return "";
     }
@@ -32,9 +32,9 @@ public class Differ {
     }
 
     private static String format(List<Map<String, Object>> result, String format) {
-         return switch (format) {
+        return switch (format) {
             case "stylish" -> Formater.format(result);
-             default -> throw new RuntimeException("format not supported");
+            default -> throw new RuntimeException("format not supported");
         };
     }
 }
