@@ -22,3 +22,6 @@ jobs:
         uses: hexlet/project-action@release
         with:
           hexlet-id: ${{ secrets.HEXLET_ID }}
+          gradle-version: 8.7
+            - run: make checkstyleMain
+            - run: make test
