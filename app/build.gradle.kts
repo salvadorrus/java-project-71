@@ -1,13 +1,13 @@
 plugins {
-    //id("java")
+    //id("application")
     application
     checkstyle
     jacoco
 }
 
-//application {
-//    mainClass = "hexlet.code.App"
-//}
+application {
+    mainClass = "hexlet.code.App"
+}
 
 group = "hexlet.code"
 version = "1.0-SNAPSHOT"
