@@ -17,11 +17,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Hexlet project check
-        uses: hexlet/project-action@release
+      - uses: actions/setup-java@v4
         with:
-          hexlet-id: ${{ secrets.HEXLET_ID }}
+          java-version: '21'
+          distribution: 'temurin'
+      - uses: gradle/gradle-build-action@release
+        with:
           gradle-version: 8.7
       - run: make checkstyleMain
       - run: make test
