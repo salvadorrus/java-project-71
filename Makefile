@@ -9,3 +9,8 @@ checkstyleMain:
 
 report:
 	make -C app report
+
+install:
+	make -C clean install
+
+	.PHONY: build

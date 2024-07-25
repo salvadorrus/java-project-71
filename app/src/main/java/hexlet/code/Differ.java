@@ -20,12 +20,12 @@ public class Differ {
 
         List<Map<String, Object>> compareResult = Comparator.compare(file1, file2);
 
-        return format(compareResult, format);
+        return Formatter.format(compareResult, format);
     }
 
-    public static String generate(String filepath1, String filepath2) throws Exception {
-        return generate(filepath1, filepath2, "stylish");
-    }
+    //public static String generate(String filepath1, String filepath2) throws Exception {
+    //    return generate(filepath1, filepath2, "stylish");
+    //}
 
     public static String readFile(String filePath) throws Exception {
         Path path = Paths.get(filePath).toAbsolutePath().normalize();
@@ -37,10 +37,5 @@ public class Differ {
         return pathArray[pathArray.length - 1];
     }
 
-    private static String format(List<Map<String, Object>> compareResult, String format) {
-        return switch (format) {
-            case "stylish" -> Formatter.format(compareResult);
-            default -> throw new RuntimeException("format not supported");
-        };
-    }
+
 }

@@ -2,10 +2,10 @@ package hexlet.code;
 
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
-
 import java.util.concurrent.Callable;
 
 @Command(name = "gendiff", mixinStandardHelpOptions = true)
+
 public class App implements Callable<Integer> {
 
     @CommandLine.Parameters(index = "0",
