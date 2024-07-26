@@ -19,7 +19,7 @@ jobs:
           gradle-version: 8.7
       - run: make checkstyleMain
       - run: make test
-      - name: Publish code coverage
+      - name: publish code coverage to code-climate (duh)
         uses: paambaati/codeclimate-action@8.0.0
         env:
           CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
