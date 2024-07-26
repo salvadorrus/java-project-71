@@ -28,7 +28,7 @@ public class Comparator {
                 result.put("status", "added");
             } else if (!Objects.equals(file1.get(key), file2.get(key))) {
                 result.put("newValue", file1.get(key));
-                result.put("oldValue", file1.get(key));
+                result.put("oldValue", file2.get(key));
                 result.put("status", "changed");
             } else {
                 result.put("newValue", file1.get(key));
