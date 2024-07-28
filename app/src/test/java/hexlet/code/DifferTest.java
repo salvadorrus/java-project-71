@@ -1,7 +1,6 @@
 package hexlet.code;
 
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -11,8 +10,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class DifferTest {
 
-    //private static String filepath1;
-    //private static String filepath2;
     private static String resultJson;
     private static String resultPlain;
     private static String resultStylish;
@@ -25,8 +22,6 @@ class DifferTest {
 
     @BeforeAll
     public static void beforeAll() throws Exception {
-        //filepath1 = getPath("filepath3.json");
-        //filepath2 = getPath("filepath4.json");
         resultJson = getPath("resultJson.json");
         resultPlain = getPath("resultPlain.txt");
         resultStylish = getPath("resultStylish.txt");
