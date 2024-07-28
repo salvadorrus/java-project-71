@@ -31,7 +31,7 @@ class DifferTest {
     @ValueSource(strings = {"json", "yml"})
     public void diffTest(String format) throws Exception {
         var resultPath1 = getPath("filepath3.json" + format);
-        var resultPath2 = getPath("filepath3.json" + format);
+        var resultPath2 = getPath("filepath4.json" + format);
 
         assertEquals(Differ.generate(resultPath1, resultPath2, "json"), resultJson);
         assertEquals(Differ.generate(resultPath1, resultPath2, "plain"), resultPlain);
