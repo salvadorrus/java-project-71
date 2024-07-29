@@ -17,7 +17,7 @@ class DifferTest {
 
     private static String getPath(String filePath) throws Exception {
         var readPath = Paths.get("spc/test/resources", filePath).toAbsolutePath().normalize();
-        return Files.readString(readPath);
+        return Files.readString(readPath).trim();
     }
 
     @BeforeAll
