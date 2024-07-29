@@ -23,14 +23,14 @@ public class Plain {
                         .append(" was updated. From ")
                         .append(value(diff.get("newValue")))
                         .append(" to ")
-                        .append(value(diff.get("oldValue")));
-                        //.append("\n");
+                        .append(value(diff.get("oldValue")))
+                        .append("\n");
                 case "unchanged" -> {
                 }
                 default -> throw new Exception("format not supported");
             }
         }
-        return resultBuilder.toString();
+        return resultBuilder.toString().trim();
     }
 
     public static String value(Object value) {
@@ -41,6 +41,6 @@ public class Plain {
         } else if (value == null) {
             return null;
         }
-        return value.toString();
+        return value.toString().trim();
     }
 }
