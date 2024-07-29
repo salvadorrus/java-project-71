@@ -36,6 +36,6 @@ public class Stylish {
                 }
             }
         }
-        return resultBuilder.append("}").toString();
+        return resultBuilder.append("}").toString().trim();
     }
 }
