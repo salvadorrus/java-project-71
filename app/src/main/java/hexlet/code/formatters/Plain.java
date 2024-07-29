@@ -23,8 +23,8 @@ public class Plain {
                         .append(" was updated. From ")
                         .append(value(diff.get("newValue")))
                         .append(" to ")
-                        .append(value(diff.get("oldValue")))
-                        .append("\n");
+                        .append(value(diff.get("oldValue")));
+                        //.append("\n");
                 case "unchanged" -> {
                 }
                 default -> throw new Exception("format not supported");
