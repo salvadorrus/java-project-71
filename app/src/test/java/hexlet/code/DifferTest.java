@@ -17,7 +17,7 @@ class DifferTest {
 
     private static String getPath(String filePath) throws Exception {
         var readPath = Paths.get("spc/test/resources", filePath).toAbsolutePath().normalize();
-        return Files.readString(readPath).trim();
+        return Files.readString(readPath);
     }
 
     @BeforeAll
@@ -30,8 +30,8 @@ class DifferTest {
     @ParameterizedTest
     @ValueSource(strings = {"json", "yml"})
     public void diffTest(String format) throws Exception {
-        var resultPath1 = getPath("filepath3.json" + format);
-        var resultPath2 = getPath("filepath3.json" + format);
+        var resultPath1 = getPath("filepath1." + format);
+        var resultPath2 = getPath("filepath2." + format);
 
         assertEquals(Differ.generate(resultPath1, resultPath2, "json"), resultJson);
         assertEquals(Differ.generate(resultPath1, resultPath2, "plain"), resultPlain);
