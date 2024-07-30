@@ -4,16 +4,16 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class DifferTest {
     private static String resultJson;
     private static String resultPlain;
     private static String resultStylish;
-
 
     private static String getPath(String filePath) throws Exception {
         var readPath = Paths.get("src/test/resources", filePath).toAbsolutePath().normalize();
@@ -33,12 +33,11 @@ class DifferTest {
         var resultPath1 = getPath("filepath1." + format);
         var resultPath2 = getPath("filepath2." + format);
 
+        assertEquals(Differ.generate(resultPath1, resultPath2), resultStylish);
         assertEquals(Differ.generate(resultPath1, resultPath2, "json"), resultJson);
         assertEquals(Differ.generate(resultPath1, resultPath2, "plain"), resultPlain);
-        assertEquals(Differ.generate(resultPath1, resultPath2), resultStylish);
         assertEquals(Differ.generate(resultPath1, resultPath2, "stylish"), resultStylish);
 
 
     }
-
 }
