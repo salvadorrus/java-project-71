@@ -18,10 +18,9 @@ class DifferTest {
 
     private static Path getPath(String filePath) {
         return Paths.get("src/test/resources", filePath).toAbsolutePath().normalize();
-        //return Files.readString(readPath).trim();
     }
 
-    private  static String getRead(String filePath) throws Exception {
+    private static String getRead(String filePath) throws Exception {
         return Files.readString(getPath(filePath)).trim();
     }
 
