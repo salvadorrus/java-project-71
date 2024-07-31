@@ -3,7 +3,7 @@ plugins {
     checkstyle
     jacoco
     id("com.github.ben-manes.versions") version "0.50.0"
-    id("com.adarshr.test-logger") version "3.0.0"
+    id("com.adarshr.test-logger") version "3.2.0"
 }
 
 application {
